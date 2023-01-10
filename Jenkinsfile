@@ -15,8 +15,11 @@ pipeline {
             }
         }
         stage('DEVELOP') {
-            when {
+            /*when {
                 environment name: 'STAGE_DEPLOY', value: 'DESA'
+            }*/
+            environment {
+                STAGE_DEPLOY = 'DESA'
             }
             steps {
                 sh 'serverless deploy --stage $STAGE_DEPLOY'
