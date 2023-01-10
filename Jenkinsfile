@@ -4,6 +4,11 @@ pipeline {
         nodejs "node"
     }
     stages {
+        stage('INSTALL DEPENDENCIE') {
+            steps {
+                sh 'npm install'
+            }
+        }
         stage('TEST') {
             steps {
                 sh 'echo  prueba de test'
@@ -11,7 +16,7 @@ pipeline {
         }
         stage('DEVELOP') {
             when {
-                environment name: 'STAGE_DEPLOY' value: 'DESA'
+                environment name: 'STAGE_DEPLOY', value: 'DESA'
             }
             steps {
                 sh 'serverless deploy --stage $STAGE_DEPLOY'
