@@ -22,6 +22,7 @@ pipeline {
                 STAGE_DEPLOY = 'DESA'
             }
             steps {
+                sh 'npm install -g serverless'
                 sh 'serverless deploy'
             }
             /*withAWS(credential: 'ID-profile-aws-tsc-user') {
