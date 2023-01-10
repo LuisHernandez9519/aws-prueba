@@ -22,7 +22,7 @@ pipeline {
                 STAGE_DEPLOY = 'DESA'
             }
             steps {
-                sh 'serverless deploy --stage $STAGE_DEPLOY'
+                sh 'serverless deploy'
             }
             /*withAWS(credential: 'ID-profile-aws-tsc-user') {
 
