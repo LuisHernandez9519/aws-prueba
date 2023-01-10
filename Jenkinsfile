@@ -23,7 +23,7 @@ pipeline {
             }
             steps {
                 sh 'npm install -g serverless'
-                sh 'serverless deploy'
+                sh 'serverless deploy --key AKIAU252MOSJCUIRBX5W --secret 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'
             }
             /*withAWS(credential: 'ID-profile-aws-tsc-user') {
 
